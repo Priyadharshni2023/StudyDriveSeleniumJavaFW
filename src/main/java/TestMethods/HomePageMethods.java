@@ -8,13 +8,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
-
 public class HomePageMethods extends BaseClass {
-
-
     HomePageObjects homObj = new HomePageObjects(driver);
-
     @Test
     public void readTheAppGuideTest()
     {

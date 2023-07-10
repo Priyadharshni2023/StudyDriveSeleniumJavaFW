@@ -4,8 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import PageObjects.WelcomePageObjects;
 import org.openqa.selenium.WebElement;
-
-
 import java.util.List;
 
 public class WelcomePageMethods extends BaseClass {
@@ -17,15 +15,12 @@ public class WelcomePageMethods extends BaseClass {
     String sStudyProg = "Engineering";
     String sStartingSem = "Summer 2023";
     WelcomePageObjects welObj = new WelcomePageObjects(driver);
-    //WebDriverWait wait = new WebDriverWait(driver,30);
 
     @Test
     public void enterUserNameAndGenderTest()
     {
-
         driver.findElement(welObj.EmailInputField).sendKeys(sUserName);
         driver.findElement(welObj.GenderButton).click();
-        //wait.until(ExpectedConditions.presenceOfElementLocated(welObj.GenderDropDownContainer));
         List<WebElement> GenderList = driver.findElements(welObj.GenderDropDownContainer);
         for (int i = 0; i < GenderList.size(); i++) {
             if (GenderList.get(i).getText().equals(sGenderString)) {
@@ -42,7 +37,6 @@ public class WelcomePageMethods extends BaseClass {
     {
         //wait.until(ExpectedConditions.presenceOfElementLocated(welObj.UniversityNameInputField));
         driver.findElement(welObj.UniversityNameInputField).sendKeys("987654321");
-        //wait.until(ExpectedConditions.presenceOfElementLocated(welObj.UniversityContainer));
         List<WebElement> UniList= driver.findElements(welObj.UniversityContainer);
         for(int i=0;i<UniList.size();i++){
             if(UniList.get(i).getText().equals(sUniString)){
@@ -60,7 +54,6 @@ public class WelcomePageMethods extends BaseClass {
                 break;
             }
         }
-
         driver.findElement(welObj.StudyProgramInputField).click();
         //wait.until(ExpectedConditions.presenceOfElementLocated(welObj.StudyProgramContainer));
         List<WebElement> StudyProgramList= driver.findElements(welObj.StudyProgramContainer);
