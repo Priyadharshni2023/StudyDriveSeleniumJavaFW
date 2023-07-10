@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="TC_01_ValidateIfSignUpFunctionalityIsWorkingFine">
+        <classes>
+            <class name="TestMethods.SignUpPageMethods">
+            <methods>
+                <include name="acceptCookiesTest"/>
+                <include name="enterSignUpCredentialsTest"/>
+            </methods>
+            </class>
+            <class name="TestMethods.WelcomePageMethods">
+                <methods>
+                    <include name="enterUserNameAndGenderTest"/>
+                    <include name="enterAcademicDetailsTest"/>
+                </methods>
+            </class>
+            <class name="TestMethods.HomePageMethods">
+                <methods>
+                    <include name="readTheAppGuideTest"/>
+                    <include name="deleteAccount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="TC_02_ValidateIfAlreadyExistingUserIsSignedUp">
+        <classes>
+            <class name="TestMethods.SignUpPageMethods">
+                <methods>
+                    <include name="acceptCookiesTest"/>
+                    <include name="enterExistingCredentialsTest"/>
+                    <include name="enterInvalidEmailTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
